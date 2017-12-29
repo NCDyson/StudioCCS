@@ -1,0 +1,11 @@
+﻿TODO:
+	Add support for mesh normals (And basic lighting for preview mode)
+	Add support of CCS Lights
+	Fix Alpha Blending Issue (2-Pass Rendering? Implement BlitGroup support?)
+	
+	GU:
+		
+
+
+Problem files:
+	Random files in LR/Vol4/AVA folder

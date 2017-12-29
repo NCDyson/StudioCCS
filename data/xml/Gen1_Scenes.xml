@@ -1,0 +1,247 @@
+<?xml version="1.0" ?>
+<Scene Type="Town" Name="Mac Anu">
+	<Resource FileName="TOWN01.CCS" Alternate="TOWN01D.CCS">
+		<Objects>
+			<OBJECT Anchor="DMY_floor_01pos" BltGrp="1" Float="100000.0" Layer="1" Object="MDL_floor_01"/>
+			<OBJECT Anchor="DMY_floor_02pos" BltGrp="1" Float="100000.0" Layer="1" Object="MDL_floor_02"/>
+			<OBJECT Anchor="DMY_floor_03pos" BltGrp="1" Float="100000.0" Layer="1" Object="MDL_floor_03"/>
+			<OBJECT Anchor="DMY_floor_04pos" BltGrp="1" Float="100000.0" Layer="1" Object="MDL_floor_04"/>
+			<OBJECT Anchor="DMY_floor_05pos" BltGrp="1" Float="100000.0" Layer="1" Object="MDL_floor_05"/>
+			<OBJECT Anchor="DMY_floor_06pos" BltGrp="1" Float="100000.0" Layer="1" Object="MDL_floor_06"/>
+			<OBJECT Anchor="DMY_floor_07pos" BltGrp="1" Float="100000.0" Layer="1" Object="MDL_floor_07"/>
+			<OBJECT Anchor="DMY_floor_01pos" BltGrp="2" Float="100000.0" Layer="1" Object="MDL_obj_01"/>
+			<OBJECT Anchor="DMY_floor_02pos" BltGrp="2" Float="100000.0" Layer="1" Object="MDL_obj_02"/>
+			<OBJECT Anchor="DMY_floor_03pos" BltGrp="2" Float="100000.0" Layer="1" Object="MDL_obj_03"/>
+			<OBJECT Anchor="DMY_floor_04pos" BltGrp="2" Float="100000.0" Layer="1" Object="MDL_obj_04"/>
+			<OBJECT Anchor="DMY_floor_05pos" BltGrp="2" Float="100000.0" Layer="1" Object="MDL_obj_05"/>
+			<OBJECT Anchor="DMY_floor_06pos" BltGrp="2" Float="100000.0" Layer="1" Object="MDL_obj_06"/>
+			<OBJECT Anchor="DMY_floor_07pos" BltGrp="2" Float="100000.0" Layer="1" Object="MDL_obj_07"/>
+			<OBJECT Anchor="DMY_floor_29pos" BltGrp="2" Float="100000.0" Layer="1" Object="MDL_obj_29"/>
+			<OBJECT Anchor="DMY_floor_30pos" BltGrp="2" Float="100000.0" Layer="1" Object="MDL_obj_30"/>
+			<OBJECT Anchor="DMY_floor_31pos" BltGrp="2" Float="100000.0" Layer="1" Object="MDL_obj_31"/>
+			<OBJECT Anchor="DMY_floor_32pos" BltGrp="2" Float="100000.0" Layer="1" Object="MDL_obj_32"/>
+			<OBJECT Anchor="DMY_floor_01pos" BltGrp="3" Float="100000.0" Layer="1" Object="MDL_obj2_01"/>
+			<OBJECT Anchor="DMY_floor_02pos" BltGrp="3" Float="100000.0" Layer="1" Object="MDL_obj2_02"/>
+			<OBJECT Anchor="DMY_floor_03pos" BltGrp="3" Float="100000.0" Layer="1" Object="MDL_obj2_03"/>
+			<OBJECT Anchor="DMY_floor_04pos" BltGrp="3" Float="100000.0" Layer="1" Object="MDL_obj2_04"/>
+			<OBJECT Anchor="DMY_floor_05pos" BltGrp="3" Float="100000.0" Layer="1" Object="MDL_obj2_05"/>
+			<OBJECT Anchor="DMY_floor_06pos" BltGrp="3" Float="100000.0" Layer="1" Object="MDL_obj2_06"/>
+			<OBJECT Anchor="DMY_floor_07pos" BltGrp="3" Float="100000.0" Layer="1" Object="MDL_obj2_07"/>
+			<OBJECT Anchor="DMY_floor_29pos" BltGrp="3" Float="100000.0" Layer="1" Object="MDL_obj2_29"/>
+			<OBJECT Anchor="DMY_floor_30pos" BltGrp="3" Float="100000.0" Layer="1" Object="MDL_obj2_30"/>
+			<OBJECT Anchor="DMY_floor_31pos" BltGrp="3" Float="100000.0" Layer="1" Object="MDL_obj2_31"/>
+			<OBJECT Anchor="DMY_floor_32pos" BltGrp="3" Float="100000.0" Layer="1" Object="MDL_obj2_32"/>
+			<OBJECT Anchor="DMY_floor_05pos" BltGrp="2" Float="100000.0" Layer="1" Object="MDL_obj_05lod"/>
+			<OBJECT Anchor="DMY_floor_02pos" BltGrp="2" Float="100000.0" Layer="1" Object="MDL_obj_02lod"/>
+			<OBJECT Anchor="DMY_floor_05pos" BltGrp="0" Float="100000.0" Layer="1" Object="MDL_sr1tow01"/>
+		</Objects>
+		<Animations>
+			<ANIMATION Anchor="" Animation="ANM_sr1sim1_a" Clump="CMP_sr1sim1_00" Float="5500.0" Unk1="3" Unk4="0"/>
+			<ANIMATION Anchor="" Animation="ANM_sr1sim2_a" Clump="CMP_sr1sim2_00" Float="5500.0" Unk1="3" Unk4="0"/>
+			<ANIMATION Anchor="" Animation="ANM_sr1sim3_a" Clump="CMP_sr1sim3_00" Float="5500.0" Unk1="3" Unk4="0"/>
+			<ANIMATION Anchor="DMY_sr1fla1_01pos" Animation="ANM_sr1fla1_a" Clump="" Float="5500.0" Unk1="3" Unk4="2"/>
+			<ANIMATION Anchor="DMY_sr1fla1_02pos" Animation="ANM_sr1fla1_a" Clump="" Float="5500.0" Unk1="3" Unk4="2"/>
+			<ANIMATION Anchor="DMY_sr1fla1_03pos" Animation="ANM_sr1fla1_a" Clump="" Float="5500.0" Unk1="3" Unk4="2"/>
+			<ANIMATION Anchor="DMY_sr1fla1_04pos" Animation="ANM_sr1fla1_a" Clump="" Float="5500.0" Unk1="3" Unk4="2"/>
+			<ANIMATION Anchor="DMY_sr1fla1_05pos" Animation="ANM_sr1fla1_a" Clump="" Float="5500.0" Unk1="3" Unk4="2"/>
+			<ANIMATION Anchor="DMY_sr1fla1_06pos" Animation="ANM_sr1fla1_a" Clump="" Float="5500.0" Unk1="3" Unk4="2"/>
+			<ANIMATION Anchor="DMY_sr1shi01" Animation="ANM_sr1shi1_a" Clump="" Float="7500.0" Unk1="0" Unk4="2"/>
+			<ANIMATION Anchor="DMY_sr1shi02" Animation="ANM_sr1shi1_a" Clump="" Float="7500.0" Unk1="0" Unk4="2"/>
+		</Animations>
+		<Lights>
+			<LIGHT Light="LGT_sr1lig1" Unk1="0"/>
+			<LIGHT Light="LGT_sr1omn01" Unk1="1"/>
+			<LIGHT Light="LGT_sr1omn02" Unk1="1"/>
+			<LIGHT Light="LGT_sr1omn03" Unk1="1"/>
+			<LIGHT Light="LGT_sr1omn04" Unk1="1"/>
+			<LIGHT Light="LGT_sr1omn05" Unk1="1"/>
+		</Lights>
+	</Resource>
+	<Resource FileName="WAT1.CCS">
+		<Objects>
+			<OBJECT NAME="OBJ_wat00"/>
+			<OBJECT NAME="OBJ_wat2_00"/>
+			<OBJECT NAME="OBJ_wat3_00"/>
+			<OBJECT NAME="OBJ_wat4_00"/>
+		</Objects>
+		<Animations>
+			<ANIMATION NAME="ANM_sr1wat1_a"/>
+			<ANIMATION NAME="ANM_sr1wat2_a"/>
+			<ANIMATION NAME="ANM_sr1wat3_a"/>
+			<ANIMATION NAME="ANM_sr1wat4_a"/>
+		</Animations>
+		<Lights>
+		</Lights>
+	</Resource>	
+</Scene>
+<Scene Type="Town" Name="Dun Loireag">
+	<Resource FileName="TOWN02.CCS" Alternate="TOWN02D.CCS">
+		<Objects>
+			<OBJECT Anchor="DMY_floor_01pos" BltGrp="1" Float="100000.0" Layer="2" Object="MDL_floor_01"/>
+			<OBJECT Anchor="DMY_floor_02pos" BltGrp="1" Float="100000.0" Layer="2" Object="MDL_floor_02"/>
+			<OBJECT Anchor="DMY_floor_03pos" BltGrp="1" Float="100000.0" Layer="2" Object="MDL_floor_03"/>
+			<OBJECT Anchor="DMY_floor_04pos" BltGrp="1" Float="100000.0" Layer="2" Object="MDL_floor_04"/>
+			<OBJECT Anchor="DMY_floor_05pos" BltGrp="1" Float="100000.0" Layer="2" Object="MDL_floor_05"/>
+			<OBJECT Anchor="DMY_floor_01pos" BltGrp="2" Float="100000.0" Layer="2" Object="MDL_obj_01"/>
+			<OBJECT Anchor="DMY_floor_02pos" BltGrp="2" Float="100000.0" Layer="2" Object="MDL_obj_02"/>
+			<OBJECT Anchor="DMY_floor_03pos" BltGrp="2" Float="100000.0" Layer="2" Object="MDL_obj_03"/>
+			<OBJECT Anchor="DMY_floor_04pos" BltGrp="2" Float="100000.0" Layer="2" Object="MDL_obj_04"/>
+			<OBJECT Anchor="DMY_floor_05pos" BltGrp="2" Float="100000.0" Layer="2" Object="MDL_obj_05"/>
+			<OBJECT Anchor="DMY_sr2wep1pos" BltGrp="2" Float="100000.0" Layer="2" Object="MDL_sr2wep1"/>
+			<OBJECT Anchor="DMY_sr2mag1pos" BltGrp="2" Float="100000.0" Layer="2" Object="MDL_sr2mag1"/>
+			<OBJECT Anchor="DMY_sr2fai1pos" BltGrp="2" Float="100000.0" Layer="2" Object="MDL_sr2fai1"/>
+			<OBJECT Anchor="DMY_sr2ite1pos" BltGrp="2" Float="100000.0" Layer="2" Object="MDL_sr2ite1"/>
+			<OBJECT Anchor="DMY_sr2sav1pos" BltGrp="2" Float="100000.0" Layer="2" Object="MDL_sr2sav1"/>
+			<OBJECT Anchor="DMY_floor_01pos" BltGrp="3" Float="100000.0" Layer="2" Object="MDL_obj2_01"/>
+			<OBJECT Anchor="DMY_floor_02pos" BltGrp="3" Float="100000.0" Layer="2" Object="MDL_obj2_02"/>
+			<OBJECT Anchor="DMY_floor_03pos" BltGrp="3" Float="100000.0" Layer="2" Object="MDL_obj2_03"/>
+			<OBJECT Anchor="DMY_floor_04pos" BltGrp="3" Float="100000.0" Layer="2" Object="MDL_obj2_04"/>
+			<OBJECT Anchor="DMY_floor_05pos" BltGrp="3" Float="100000.0" Layer="2" Object="MDL_obj2_05"/>
+		</Objects>
+		<Animations>
+			<ANIMATION Anchor="DMY_sr2win1_1pos" Animation="ANM_sr2win1a" Clump="" Float="100000.0" Unk1="2" Unk4="2"/>
+			<ANIMATION Anchor="DMY_sr2win1_2pos" Animation="ANM_sr2win1a" Clump="" Float="100000.0" Unk1="2" Unk4="2"/>
+			<ANIMATION Anchor="DMY_sr2win1_3pos" Animation="ANM_sr2win1a" Clump="" Float="100000.0" Unk1="2" Unk4="2"/>
+			<ANIMATION Anchor="DMY_sr2win1_4pos" Animation="ANM_sr2win1a" Clump="" Float="100000.0" Unk1="2" Unk4="2"/>
+			<ANIMATION Anchor="DMY_sr2win2_1pos" Animation="ANM_sr2win2a" Clump="" Float="100000.0" Unk1="2" Unk4="2"/>
+			<ANIMATION Anchor="DMY_sr2win2_2pos" Animation="ANM_sr2win2a" Clump="" Float="100000.0" Unk1="2" Unk4="2"/>
+			<ANIMATION Anchor="DMY_sr2win2_3pos" Animation="ANM_sr2win2a" Clump="" Float="100000.0" Unk1="2" Unk4="2"/>
+			<ANIMATION Anchor="DMY_sr2win2_4pos" Animation="ANM_sr2win2a" Clump="" Float="100000.0" Unk1="2" Unk4="2"/>
+			<ANIMATION Anchor="" Animation="ANM_sr2bal1a" Clump="CMP_sr2bal1" Float="100000.0" Unk1="3" Unk4="0"/>
+		</Animations>
+		<Lights>
+			<LIGHT Light="LGT_sr2lig1" Unk1="0"/>
+			<LIGHT Light="LGT_sr2omn01" Unk1="1"/>
+			<LIGHT Light="LGT_sr2omn02" Unk1="1"/>
+			<LIGHT Light="LGT_sr2omn03" Unk1="1"/>
+			<LIGHT Light="LGT_sr2omn04" Unk1="1"/>
+			<LIGHT Light="LGT_sr2omn05" Unk1="1"/>
+		</Lights>
+	</Resource>
+</Scene>
+<Scene Type="Town" Name="Carmina Gadelica">
+	<Resource FileName="TOWN03.CCS" Alternate="TOWN03D.CCS">
+		<Objects>
+			<OBJECT Anchor="DMY_sr3flo1_1pos" BltGrp="1" Float="100000.0" Layer="2" Object="MDL_sr3flo1_1"/>
+			<OBJECT Anchor="DMY_sr3flo1_2pos" BltGrp="1" Float="100000.0" Layer="2" Object="MDL_sr3flo1_2"/>
+			<OBJECT Anchor="DMY_sr3flo1_3pos" BltGrp="1" Float="100000.0" Layer="2" Object="MDL_sr3flo1_3"/>
+			<OBJECT Anchor="DMY_sr3flo1_4pos" BltGrp="1" Float="100000.0" Layer="2" Object="MDL_sr3flo1_4"/>
+			<OBJECT Anchor="DMY_sr3flo1_1pos" BltGrp="1" Float="100000.0" Layer="2" Object="MDL_sr3flo2_1"/>
+			<OBJECT Anchor="DMY_sr3flo1_2pos" BltGrp="1" Float="100000.0" Layer="2" Object="MDL_sr3flo2_2"/>
+			<OBJECT Anchor="DMY_sr3flo1_3pos" BltGrp="1" Float="100000.0" Layer="2" Object="MDL_sr3flo2_3"/>
+			<OBJECT Anchor="DMY_sr3flo1_4pos" BltGrp="1" Float="100000.0" Layer="2" Object="MDL_sr3flo2_4"/>
+			<OBJECT Anchor="DMY_sr3wep1pos" BltGrp="2" Float="100000.0" Layer="2" Object="MDL_sr3wep1"/>
+			<OBJECT Anchor="DMY_sr3mag1pos" BltGrp="2" Float="100000.0" Layer="2" Object="MDL_sr3mag1"/>
+			<OBJECT Anchor="DMY_sr3fai1pos" BltGrp="2" Float="100000.0" Layer="2" Object="MDL_sr3fai1"/>
+			<OBJECT Anchor="DMY_sr3ite1pos" BltGrp="2" Float="100000.0" Layer="2" Object="MDL_sr3ite1"/>
+			<OBJECT Anchor="DMY_sr3sav1pos" BltGrp="2" Float="100000.0" Layer="2" Object="MDL_sr3sav1"/>
+			<OBJECT Anchor="DMY_sr3oba1_1pos" BltGrp="3" Float="100000.0" Layer="2" Object="MDL_sr3oba1_1"/>
+			<OBJECT Anchor="DMY_sr3oba1_2pos" BltGrp="3" Float="100000.0" Layer="2" Object="MDL_sr3oba1_2"/>
+			<OBJECT Anchor="DMY_sr3oba1_3pos" BltGrp="3" Float="100000.0" Layer="2" Object="MDL_sr3oba1_3"/>
+			<OBJECT Anchor="DMY_sr3oba1_4pos" BltGrp="3" Float="100000.0" Layer="2" Object="MDL_sr3oba1_4"/>
+			<OBJECT Anchor="DMY_sr3oba1_1pos" BltGrp="3" Float="100000.0" Layer="2" Object="MDL_sr3oba2_1"/>
+			<OBJECT Anchor="DMY_sr3oba1_2pos" BltGrp="3" Float="100000.0" Layer="2" Object="MDL_sr3oba2_2"/>
+			<OBJECT Anchor="DMY_sr3oba1_3pos" BltGrp="3" Float="100000.0" Layer="2" Object="MDL_sr3oba2_3"/>
+			<OBJECT Anchor="DMY_sr3oba1_4pos" BltGrp="3" Float="100000.0" Layer="2" Object="MDL_sr3oba2_4"/>
+			<OBJECT Anchor="DMY_sr3obj1_1pos" BltGrp="2" Float="100000.0" Layer="2" Object="MDL_sr3obj1_1"/>
+			<OBJECT Anchor="DMY_sr3obj1_2pos" BltGrp="2" Float="100000.0" Layer="2" Object="MDL_sr3obj1_2"/>
+			<OBJECT Anchor="DMY_sr3obj1_2pos" BltGrp="2" Float="100000.0" Layer="2" Object="MDL_sr3obj2_2"/>
+			<OBJECT Anchor="" BltGrp="0" Float="100000.0" Layer="0" Object="MDL_sr3ray1_1"/>
+			<OBJECT Anchor="" BltGrp="0" Float="100000.0" Layer="0" Object="MDL_sr3ray1_2"/>
+			<OBJECT Anchor="" BltGrp="0" Float="100000.0" Layer="0" Object="MDL_sr3ray1_3"/>
+			<OBJECT Anchor="" BltGrp="0" Float="100000.0" Layer="0" Object="MDL_sr3ray1_4"/>
+			<OBJECT Anchor="" BltGrp="0" Float="100000.0" Layer="0" Object="MDL_sr3ray1_5"/>
+			<OBJECT Anchor="" BltGrp="0" Float="100000.0" Layer="0" Object="MDL_sr3ray2_1"/>
+			<OBJECT Anchor="" BltGrp="0" Float="100000.0" Layer="0" Object="MDL_sr3ray2_2"/>
+			<OBJECT Anchor="" BltGrp="0" Float="100000.0" Layer="0" Object="MDL_sr3ray2_3"/>
+			<OBJECT Anchor="" BltGrp="0" Float="100000.0" Layer="0" Object="MDL_sr3ray2_4"/>
+			<OBJECT Anchor="" BltGrp="0" Float="100000.0" Layer="0" Object="MDL_sr3ray2_5"/>
+		</Objects>
+		<Animations>
+		</Animations>
+		<Lights>
+			<LIGHT Light="LGT_sr3lig1" Unk1="0"/>
+			<LIGHT Light="LGT_omni01" Unk1="1"/>
+			<LIGHT Light="LGT_omni02" Unk1="1"/>
+			<LIGHT Light="LGT_omni03" Unk1="1"/>
+			<LIGHT Light="LGT_omni04" Unk1="1"/>
+			<LIGHT Light="LGT_omni05" Unk1="1"/>
+			<LIGHT Light="LGT_omni06" Unk1="1"/>
+			<LIGHT Light="LGT_omni07" Unk1="1"/>
+			<LIGHT Light="LGT_omni08" Unk1="1"/>
+			<LIGHT Light="LGT_omni09" Unk1="1"/>
+			<LIGHT Light="LGT_omni10" Unk1="1"/>
+			<LIGHT Light="LGT_omni11" Unk1="1"/>
+		</Lights>
+	</Resource>
+</Scene>
+<Scene Type="Town" Name="Fort Ouph">
+	<Resource FileName="TOWN01.CCS" Alternate="TOWN01D.CCS">
+		<Objects>
+			<OBJECT Anchor="DMY_sr4flo1pos" BltGrp="1" Float="100000.0" Layer="2" Object="MDL_sr4flo1"/>
+			<OBJECT Anchor="DMY_sr4flo2pos" BltGrp="1" Float="100000.0" Layer="2" Object="MDL_sr4flo2"/>
+			<OBJECT Anchor="DMY_sr4flo3pos" BltGrp="1" Float="100000.0" Layer="2" Object="MDL_sr4flo3"/>
+			<OBJECT Anchor="DMY_sr4obj1_1pos" BltGrp="2" Float="100000.0" Layer="2" Object="MDL_sr4obj1_1"/>
+			<OBJECT Anchor="DMY_sr4obj1_2pos" BltGrp="2" Float="100000.0" Layer="2" Object="MDL_sr4obj1_2"/>
+			<OBJECT Anchor="DMY_sr4obj1_3pos" BltGrp="2" Float="100000.0" Layer="2" Object="MDL_sr4obj1_3"/>
+			<OBJECT Anchor="DMY_sr4wep1pos" BltGrp="2" Float="100000.0" Layer="2" Object="MDL_sr4wep1"/>
+			<OBJECT Anchor="DMY_sr4mag1pos" BltGrp="2" Float="100000.0" Layer="2" Object="MDL_sr4mag1"/>
+			<OBJECT Anchor="DMY_sr4fai1pos" BltGrp="2" Float="100000.0" Layer="2" Object="MDL_sr4fai1"/>
+			<OBJECT Anchor="DMY_sr4ite1pos" BltGrp="2" Float="100000.0" Layer="2" Object="MDL_sr4ite1"/>
+			<OBJECT Anchor="DMY_sr4sav1pos" BltGrp="2" Float="100000.0" Layer="2" Object="MDL_sr4sav1"/>
+			<OBJECT Anchor="DMY_sr4obj2_1pos" BltGrp="3" Float="100000.0" Layer="2" Object="MDL_sr4obj2_1"/>
+			<OBJECT Anchor="DMY_sr4obj2_2pos" BltGrp="3" Float="100000.0" Layer="2" Object="MDL_sr4obj2_2"/>
+			<OBJECT Anchor="DMY_sr4obj2_3pos" BltGrp="3" Float="100000.0" Layer="2" Object="MDL_sr4obj2_3"/>
+			<OBJECT Anchor="DMY_sr4obj2_2pos" BltGrp="3" Float="100000.0" Layer="2" Object="MDL_sr4obj2_2"/>
+			<OBJECT Anchor="DMY_sr4obj2_2pos" BltGrp="3" Float="100000.0" Layer="2" Object="MDL_sr4obj2_2"/>
+		</Objects>
+		<Animations>
+			<ANIMATION Anchor="" Animation="ANM_sr4tre1a" Clump="" Float="100000.0" Unk1="2" Unk4="0"/>
+		</Animations>
+		<Lights>
+			<LIGHT Light="LGT_sr4lig1" Unk1="0"/>
+			<LIGHT Light="LGT_sr4omn1" Unk1="1"/>
+			<LIGHT Light="LGT_sr4omn2" Unk1="1"/>
+			<LIGHT Light="LGT_sr4omn3" Unk1="1"/>
+			<LIGHT Light="LGT_sr4omn4" Unk1="1"/>
+			<LIGHT Light="LGT_sr4omn5" Unk1="1"/>
+		</Lights>
+	</Resource>
+</Scene>
+<Scene Type="Town" Name="Lia Fail(Net Slum)">
+	<Resource FileName="TOWN01.CCS" Alternate="TOWN01D.CCS">
+		<Objects>
+			<OBJECT Anchor="DMY_sr5flo1pos" BltGrp="1" Float="100000.0" Layer="1" Object="MDL_sr5flo1"/>
+			<OBJECT Anchor="DMY_sr5obj1pos" BltGrp="2" Float="100000.0" Layer="1" Object="MDL_sr5obj1"/>
+			<OBJECT Anchor="DMY_sr5obj2pos" BltGrp="2" Float="100000.0" Layer="1" Object="MDL_sr5obj2"/>
+			<OBJECT Anchor="DMY_sr5obj3pos" BltGrp="2" Float="100000.0" Layer="1" Object="MDL_sr5obj3"/>
+			<OBJECT Anchor="DMY_sr5oba1pos" BltGrp="3" Float="100000.0" Layer="1" Object="MDL_sr5oba1"/>
+			<OBJECT Anchor="DMY_sr5oba2pos" BltGrp="3" Float="100000.0" Layer="1" Object="MDL_sr5oba2"/>
+			<OBJECT Anchor="DMY_sr5oba3pos" BltGrp="3" Float="100000.0" Layer="1" Object="MDL_sr5oba3"/>
+		</Objects>
+		<Animations>
+		</Animations>
+		<Lights>
+			<LIGHT Light="LGT_fdirect01" Unk1="0"/>
+			<LIGHT Light="LGT_omni01" Unk1="1"/>
+			<LIGHT Light="LGT_omni02" Unk1="1"/>
+			<LIGHT Light="LGT_omni03" Unk1="1"/>
+			<LIGHT Light="LGT_omni04" Unk1="1"/>
+			<LIGHT Light="LGT_omni05" Unk1="1"/>
+			<LIGHT Light="LGT_omni06" Unk1="1"/>
+			<LIGHT Light="LGT_omni07" Unk1="1"/>
+			<LIGHT Light="LGT_omni08" Unk1="1"/>
+			<LIGHT Light="LGT_omni09" Unk1="1"/>
+			<LIGHT Light="LGT_omni10" Unk1="1"/>
+			<LIGHT Light="LGT_omni11" Unk1="1"/>
+			<LIGHT Light="LGT_omni12" Unk1="1"/>
+			<LIGHT Light="LGT_omni13" Unk1="1"/>
+			<LIGHT Light="LGT_omni14" Unk1="1"/>
+			<LIGHT Light="LGT_omni15" Unk1="1"/>
+			<LIGHT Light="LGT_omni16" Unk1="1"/>
+			<LIGHT Light="LGT_omni17" Unk1="1"/>
+			<LIGHT Light="LGT_omni18" Unk1="1"/>
+			<LIGHT Light="LGT_omni19" Unk1="1"/>
+		</Lights>
+	</Resource>
+</Scene>

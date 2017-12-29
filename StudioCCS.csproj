@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{F79F1BED-6AD3-4FC1-A14D-4143DB576977}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>StudioCCS</RootNamespace>
+    <AssemblyName>StudioCCS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <WarningLevel>4</WarningLevel>
+    <SourceAnalysisOverrideSettingsFile>C:\Users\NCDyson\AppData\Roaming\ICSharpCode\SharpDevelop5\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <BaseAddress>4194304</BaseAddress>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <StartAction>Project</StartAction>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="OpenTK">
+      <HintPath>..\packages\OpenTK.3.0.0-pre\lib\net20\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArcBallCamera.cs" />
+    <Compile Include="AxisMarker.cs" />
+    <Compile Include="frmEditBone.cs" />
+    <Compile Include="frmEditBone.Designer.cs">
+      <DependentUpon>frmEditBone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmExportToObj.cs" />
+    <Compile Include="frmExportToObj.Designer.cs">
+      <DependentUpon>frmExportToObj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInfo.cs" />
+    <Compile Include="frmInfo.Designer.cs">
+      <DependentUpon>frmInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLoadScene.cs" />
+    <Compile Include="FrmLoadScene.Designer.cs">
+      <DependentUpon>FrmLoadScene.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grid.cs" />
+    <Compile Include="libCCS\CCSAnime.Controllers.cs" />
+    <Compile Include="libCCS\CCSAnime.ControllerTracks.cs" />
+    <Compile Include="libCCS\CCSAnime.cs" />
+    <Compile Include="libCCS\CCSAnime.Keyframes.cs" />
+    <Compile Include="libCCS\CCSBaseObject.cs" />
+    <Compile Include="libCCS\CCSBinaryBlob.cs" />
+    <Compile Include="libCCS\CCSBlitGroup.cs" />
+    <Compile Include="libCCS\CCSBoundingBox.cs" />
+    <Compile Include="libCCS\CCSCamera.cs" />
+    <Compile Include="libCCS\CCSClump.cs" />
+    <Compile Include="libCCS\CCSClut.cs" />
+    <Compile Include="libCCS\CCSDummy.cs" />
+    <Compile Include="libCCS\CCSEffect.cs" />
+    <Compile Include="libCCS\CCSExt.cs" />
+    <Compile Include="libCCS\CCSFBPage.cs" />
+    <Compile Include="libCCS\CCSFBRect.cs" />
+    <Compile Include="libCCS\CCSFile.cs" />
+    <Compile Include="libCCS\CCSHitMesh.cs" />
+    <Compile Include="libCCS\CCSLayer.cs" />
+    <Compile Include="libCCS\CCSLight.cs" />
+    <Compile Include="libCCS\CCSMaterial.cs" />
+    <Compile Include="libCCS\CCSModel.cs" />
+    <Compile Include="libCCS\CCSMorpher.cs" />
+    <Compile Include="libCCS\CCSObject.cs" />
+    <Compile Include="libCCS\CCSParticle.cs" />
+    <Compile Include="libCCS\CCSPCM.cs" />
+    <Compile Include="libCCS\CCSShadow.cs" />
+    <Compile Include="libCCS\CCSTexture.cs" />
+    <Compile Include="libCCS\FileHeader.cs" />
+    <Compile Include="libCCS\IndexFileEntry.cs" />
+    <Compile Include="libCCS\IndexObject.cs" />
+    <Compile Include="libCCS\Util.cs" />
+    <Compile Include="TexturePreview.cs" />
+    <Compile Include="ViewportPicbox.cs" />
+    <Compile Include="WireHelper.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="MainForm.cs" />
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scene.cs" />
+    <Compile Include="TestTriangle.cs" />
+    <Compile Include="TreeNodeTag.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="blenderDummyImport.py">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\bin\axisMarker.bin">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\bin\WireHelpers.bin">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\shaders\AxisMarker.fsh">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\shaders\AxisMarker.vsh">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\shaders\BoundingBox.fsh">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\shaders\BoundingBox.gsh">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\shaders\BoundingBox.vsh">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\shaders\CCSClump.fsh">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\shaders\CCSClump.gsh">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\shaders\CCSClump.vsh">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\shaders\CCSDeformModel.fsh" />
+    <None Include="data\shaders\CCSDeformModel.vsh" />
+    <None Include="data\shaders\CCSHitMesh.fsh">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\shaders\CCSHitMesh.vsh">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\shaders\CCSModel.fsh">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\shaders\CCSModel.vsh">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\shaders\CCSRigidModel.fsh">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Include="data\shaders\CCSRigidModel.vsh">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Include="data\shaders\Grid.fsh">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\shaders\Grid.vsh">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\shaders\TexturePreview.fsh">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\shaders\TexturePreview.vsh">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\shaders\WireHelper.fsh">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\shaders\WireHelper.vsh">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="data\shaders\Triangle.fsh">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Include="data\shaders\Triangle.vsh">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Include="OpenTK.dll.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Readme.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TODO.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmEditBone.resx">
+      <DependentUpon>frmEditBone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExportToObj.resx">
+      <DependentUpon>frmExportToObj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInfo.resx">
+      <DependentUpon>frmInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLoadScene.resx">
+      <DependentUpon>FrmLoadScene.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="data" />
+    <Folder Include="data\bin" />
+    <Folder Include="data\shaders" />
+    <Folder Include="libCCS" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
