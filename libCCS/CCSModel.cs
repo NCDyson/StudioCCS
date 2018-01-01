@@ -1547,6 +1547,7 @@ namespace StudioCCS.libCCS
 								//write Position
 								fStream.WriteLine(string.Format("v\t{0}\t{1}\t{2}", -vPos.X, vPos.Y, -vPos.Z));
 								//write texture coordinates
+								//TODO: CCSModel::DumpToObj() Export texture coordinates with material's texture coordinate offset.
 								CCSTexture tmpTexture = tmpSubModel.ParentTextureRef;
 								if(tmpTexture != null)
 								{

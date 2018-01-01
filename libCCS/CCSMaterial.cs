@@ -54,7 +54,16 @@ namespace StudioCCS.libCCS
 		{
 			TextureID = bStream.ReadInt32();
 			Alpha = bStream.ReadSingle();
-			TextureOffset = Util.ReadVec2UV(bStream);
+			if(ParentFile.GetVersion() == CCSFileHeader.CCSVersion.Gen1)
+			{
+				TextureOffset = Util.ReadVec2UV(bStream);	
+			}
+			else
+			{
+				float tmpX = bStream.ReadSingle();
+				float tmpY = bStream.ReadSingle();
+				TextureOffset = new Vector2(tmpX, tmpY);
+			}
 			//TODO: CCSMaterial::Read(): Gen2 Extra Data
 			
 			/*
@@ -75,6 +84,7 @@ namespace StudioCCS.libCCS
 				
 			}*/
 			int restData = sectionSize - 3;
+			if(ParentFile.GetVersion() != CCSFileHeader.CCSVersion.Gen1) restData -= 1;
 			if(restData > 0) bStream.BaseStream.Seek(restData * 4, SeekOrigin.Current);
 			
 			return true;

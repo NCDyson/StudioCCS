@@ -753,6 +753,7 @@ namespace StudioCCS.libCCS
 			Logger.LogInfo(string.Format("Dumping {0} to {0}.obj...\n", Header.CCSFName, outputFileName));
 			using(System.IO.StreamWriter fStream = new StreamWriter(outputFileName + ".obj", false))
 			{
+				fStream.WriteLine(string.Format("mtllib {0}.mtl", Header.CCSFName));
 				//start at vert 1 because for some reason it's 1 based indices
 				int totalVertCount = 1;
 				foreach(var tmpClump in ClumpList)
