@@ -68,3 +68,5 @@ E:\prj\dothack\StudioCCS\StudioCCS\obj\Release\StudioCCS.frmEditBone.resources
 E:\prj\dothack\StudioCCS\StudioCCS\obj\Release\StudioCCS.frmExportToOBJ.resources
 E:\prj\dothack\StudioCCS\StudioCCS\obj\Release\StudioCCS.frmInfo.resources
 E:\prj\dothack\StudioCCS\StudioCCS\obj\Release\StudioCCS.FrmLoadScene.resources
+D:\prj\dothack\StudioCCS\StudioCCS\bin\Release\OpenTK.GLControl.dll
+D:\prj\dothack\StudioCCS\StudioCCS\bin\Release\OpenTK.GLControl.xml

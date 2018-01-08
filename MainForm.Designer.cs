@@ -19,7 +19,6 @@ namespace StudioCCS
 		private System.Windows.Forms.SplitContainer treeSplit;
 		private System.Windows.Forms.TreeView ccsTree;
 		private System.Windows.Forms.PropertyGrid ccsPropertyGrid;
-		private StudioCCS.ViewportPicbox picViewport;
 		private System.Windows.Forms.ToolStrip viewToolstrip;
 		private System.Windows.Forms.ToolStripButton tbtnPreview;
 		private System.Windows.Forms.ToolStripButton tbtnScene;
@@ -68,6 +67,8 @@ namespace StudioCCS
 		private System.Windows.Forms.ToolStripMenuItem sceneAnimeContext_RemoveMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem setPoseToolStripMenuItem;
 		private System.Windows.Forms.ToolStripButton tbtnAll;
+		private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem defaultToAxisMovementToolStripMenuItem;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -98,7 +99,6 @@ namespace StudioCCS
 			this.sceneTreeView = new System.Windows.Forms.TreeView();
 			this.ccsTree = new System.Windows.Forms.TreeView();
 			this.ccsPropertyGrid = new System.Windows.Forms.PropertyGrid();
-			this.picViewport = new StudioCCS.ViewportPicbox();
 			this.viewToolstrip = new System.Windows.Forms.ToolStrip();
 			this.tbtnPreview = new System.Windows.Forms.ToolStripButton();
 			this.tbtnScene = new System.Windows.Forms.ToolStripButton();
@@ -146,6 +146,8 @@ namespace StudioCCS
 			this.setPoseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.sceneAnimeContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.sceneAnimeContext_RemoveMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.defaultToAxisMovementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			((System.ComponentModel.ISupportInitialize)(this.LogSplit)).BeginInit();
 			this.LogSplit.Panel1.SuspendLayout();
 			this.LogSplit.Panel2.SuspendLayout();
@@ -158,7 +160,6 @@ namespace StudioCCS
 			this.treeSplit.Panel1.SuspendLayout();
 			this.treeSplit.Panel2.SuspendLayout();
 			this.treeSplit.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.picViewport)).BeginInit();
 			this.viewToolstrip.SuspendLayout();
 			this.statusStrip1.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
@@ -199,7 +200,7 @@ namespace StudioCCS
 			// 
 			// viewportSplit.Panel2
 			// 
-			this.viewportSplit.Panel2.Controls.Add(this.picViewport);
+			this.viewportSplit.Panel2.BackColor = System.Drawing.SystemColors.Control;
 			this.viewportSplit.Panel2.Controls.Add(this.viewToolstrip);
 			this.viewportSplit.Size = new System.Drawing.Size(901, 438);
 			this.viewportSplit.SplitterDistance = 183;
@@ -252,16 +253,6 @@ namespace StudioCCS
 			this.ccsPropertyGrid.Name = "ccsPropertyGrid";
 			this.ccsPropertyGrid.Size = new System.Drawing.Size(183, 140);
 			this.ccsPropertyGrid.TabIndex = 0;
-			// 
-			// picViewport
-			// 
-			this.picViewport.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.picViewport.Location = new System.Drawing.Point(0, 25);
-			this.picViewport.Name = "picViewport";
-			this.picViewport.Size = new System.Drawing.Size(714, 413);
-			this.picViewport.TabIndex = 1;
-			this.picViewport.SizeChanged += new System.EventHandler(this.PicViewportResize);
-			this.picViewport.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PicViewportMouseMove);
 			// 
 			// viewToolstrip
 			// 
@@ -499,13 +490,15 @@ namespace StudioCCS
 			// 
 			// renderTimer
 			// 
+			this.renderTimer.Interval = 20;
 			this.renderTimer.Tick += new System.EventHandler(this.RenderTimerTick);
 			// 
 			// menuStrip1
 			// 
 			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
 			this.fileToolStripMenuItem,
-			this.sceneToolStripMenuItem});
+			this.sceneToolStripMenuItem,
+			this.optionsToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
 			this.menuStrip1.Size = new System.Drawing.Size(901, 24);
@@ -556,7 +549,7 @@ namespace StudioCCS
 			this.iMOQToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
 			this.loadTownToolStripMenuItem});
 			this.iMOQToolStripMenuItem.Name = "iMOQToolStripMenuItem";
-			this.iMOQToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.iMOQToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
 			this.iMOQToolStripMenuItem.Text = "IMOQ";
 			this.iMOQToolStripMenuItem.Visible = false;
 			// 
@@ -569,14 +562,14 @@ namespace StudioCCS
 			// dumpToOBJToolStripMenuItem
 			// 
 			this.dumpToOBJToolStripMenuItem.Name = "dumpToOBJToolStripMenuItem";
-			this.dumpToOBJToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.dumpToOBJToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
 			this.dumpToOBJToolStripMenuItem.Text = "Dump to OBJ";
 			this.dumpToOBJToolStripMenuItem.Click += new System.EventHandler(this.DumpToOBJToolStripMenuItemClick);
 			// 
 			// dumpToSMDToolStripMenuItem
 			// 
 			this.dumpToSMDToolStripMenuItem.Name = "dumpToSMDToolStripMenuItem";
-			this.dumpToSMDToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.dumpToSMDToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
 			this.dumpToSMDToolStripMenuItem.Text = "Dump to SMD";
 			this.dumpToSMDToolStripMenuItem.Visible = false;
 			this.dumpToSMDToolStripMenuItem.Click += new System.EventHandler(this.DumpToSMDToolStripMenuItemClick);
@@ -666,6 +659,22 @@ namespace StudioCCS
 			this.sceneAnimeContext_RemoveMenuItem.Text = "Remove";
 			this.sceneAnimeContext_RemoveMenuItem.Click += new System.EventHandler(this.SceneAnimeContext_RemoveMenuItemClick);
 			// 
+			// optionsToolStripMenuItem
+			// 
+			this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.defaultToAxisMovementToolStripMenuItem});
+			this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
+			this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+			this.optionsToolStripMenuItem.Text = "Options";
+			// 
+			// defaultToAxisMovementToolStripMenuItem
+			// 
+			this.defaultToAxisMovementToolStripMenuItem.CheckOnClick = true;
+			this.defaultToAxisMovementToolStripMenuItem.Name = "defaultToAxisMovementToolStripMenuItem";
+			this.defaultToAxisMovementToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+			this.defaultToAxisMovementToolStripMenuItem.Text = "Default to Axis Movement";
+			this.defaultToAxisMovementToolStripMenuItem.CheckedChanged += new System.EventHandler(this.DefaultToAxisMovementToolStripMenuItemCheckedChanged);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -677,6 +686,8 @@ namespace StudioCCS
 			this.Name = "MainForm";
 			this.Text = "StudioCCS";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainFormFormClosing);
+			this.DragDrop += new System.Windows.Forms.DragEventHandler(this.MainFormDragDrop);
+			this.DragEnter += new System.Windows.Forms.DragEventHandler(this.MainFormDragEnter);
 			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainFormKeyDown);
 			this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MainFormKeyUp);
 			this.LogSplit.Panel1.ResumeLayout(false);
@@ -693,7 +704,6 @@ namespace StudioCCS
 			this.treeSplit.Panel2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.treeSplit)).EndInit();
 			this.treeSplit.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.picViewport)).EndInit();
 			this.viewToolstrip.ResumeLayout(false);
 			this.viewToolstrip.PerformLayout();
 			this.statusStrip1.ResumeLayout(false);

@@ -23,6 +23,7 @@ namespace StudioCCS
 	{	
 		//Helpful References
 		TreeNode SceneAnimationNode = new TreeNode("Animations");
+		OpenTK.GLControl glViewport = null;
 		
 		public MainForm()
 		{
@@ -38,12 +39,26 @@ namespace StudioCCS
 			//wireframeToolStripMenuItem.Checked = true;
 			//smoothShadedToolStripMenuItem.Checked = true;
 			texturedToolStripMenuItem.Checked = true;
-			picViewport.MouseWheel += PicViewportMouseWheel;
+			
+			AllowDrop = true;
+			
+			glViewport = new OpenTK.GLControl();
+			viewportSplit.Panel2.Controls.Add(glViewport);
+			OpenTK.Toolkit.Init();
+			glViewport.CreateControl();
+			glViewport.CreateGraphics();
+			glViewport.Dock = DockStyle.Fill;
+			glViewport.BringToFront();
+			Scene.Init(glViewport);
+			
+			glViewport.KeyDown += MainFormKeyDown;
+			glViewport.KeyUp += MainFormKeyUp;
+			glViewport.MouseMove += PicViewportMouseMove;
+			glViewport.MouseWheel += PicViewportMouseWheel;
 			
 			#if DEBUG
 			dumpToSMDToolStripMenuItem.Visible = true;
 			#endif
-			Scene.Init(picViewport);
 			
 			sceneTreeView.Nodes.Add(SceneAnimationNode);
 			
@@ -61,22 +76,19 @@ namespace StudioCCS
 			
 			if(dlg.ShowDialog() != DialogResult.OK) return;
 			
-			int loadedCount = 0;
-			foreach (var fileName in dlg.FileNames)
+			LoadFiles(dlg.FileNames);
+		}
+		
+		private void LoadFiles(string[] fileNames)
+		{
+			foreach(var fileName in fileNames)
 			{
-				if(Scene.LoadCCSFile(fileName)) loadedCount += 1;
-			}
-			
-			if(loadedCount > 0)
-			{
-				//ccsTree.Nodes.Add(Scene.ToNode());
-				ccsTree.Nodes.Clear();
-				foreach(var tmpCCS in Scene.CCSFileList)
+				TreeNode ccsNode = Scene.LoadCCSFile(fileName);
+				if(ccsNode != null)
 				{
-					ccsTree.Nodes.Add(tmpCCS.ToNode());
+					ccsTree.Nodes.Add(ccsNode);
 				}
 			}
-				
 		}
 		
 		void ExitToolStripMenuItemClick(object sender, EventArgs e)
@@ -365,10 +377,17 @@ namespace StudioCCS
 			//if(!e.Shift) Debug.WriteLine("Shift Key Released!");
 		}
 		
-		void PicViewportResize(object sender, EventArgs e)
+		void MainFormDragDrop(object sender, DragEventArgs e)
 		{
-			Scene.UpdateViewport(picViewport);
+			string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+			LoadFiles(files);
 		}
+		
+		void MainFormDragEnter(object sender, DragEventArgs e)
+		{
+			if(e.Data.GetDataPresent(DataFormats.FileDrop)) e.Effect = DragDropEffects.Copy;
+		}
+		
 		void RenderTimerTick(object sender, EventArgs e)
 		{
 			Scene.Render();
@@ -379,6 +398,7 @@ namespace StudioCCS
 			
 			statusCameraLabel.Text = string.Format("Camera: {0}, {1}, {2}", camRotStr, camTargetStr, camDistStr);
 		}
+		
 		#endregion
 
 		#region CCSTree
@@ -555,7 +575,13 @@ namespace StudioCCS
 			}
 		}
 		#endregion
+		#region OptionsMenu
+		void DefaultToAxisMovementToolStripMenuItemCheckedChanged(object sender, EventArgs e)
+		{
+			Scene.DefaultToAxisMovement = defaultToAxisMovementToolStripMenuItem.Checked;
+		}
 		
+		#endregion
 		#region SceneTree
 
 		void SceneTreeViewNodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
@@ -595,7 +621,6 @@ namespace StudioCCS
 			}
 		}
 
-		
 		#endregion
 		
 		

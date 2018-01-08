@@ -72,3 +72,5 @@ E:\prj\dothack\StudioCCS\StudioCCS\obj\Debug\StudioCCS.MainForm.resources
 E:\prj\dothack\StudioCCS\StudioCCS\obj\Debug\StudioCCS.csproj.GenerateResource.Cache
 E:\prj\dothack\StudioCCS\StudioCCS\obj\Debug\StudioCCS.exe
 E:\prj\dothack\StudioCCS\StudioCCS\obj\Debug\StudioCCS.pdb
+D:\prj\dothack\StudioCCS\StudioCCS\bin\Debug\OpenTK.GLControl.dll
+D:\prj\dothack\StudioCCS\StudioCCS\bin\Debug\OpenTK.GLControl.xml

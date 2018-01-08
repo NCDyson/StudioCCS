@@ -122,8 +122,9 @@ namespace StudioCCS
 
 		public static bool BackfaceCull = false;
 		
-		public static IGraphicsContext Context = null;
-		public static IWindowInfo WiFo = null;
+		//public static IGraphicsContext Context = null;
+		//public static IWindowInfo WiFo = null;
+		public static GLControl control = null;
 		public static bool WasInit = false;
 		public static int ViewWidth;
 		public static int ViewHeight;
@@ -149,6 +150,7 @@ namespace StudioCCS
 		public static ArcBallCamera PreviewCamera = new ArcBallCamera();
 		public static ArcBallCamera SceneCamera = new ArcBallCamera();
 		public static ArcBallCamera AllCamera = new ArcBallCamera();
+		public static bool DefaultToAxisMovement = false;
 		
 		//Input
 		public static float LastMouseX = 0.0f;
@@ -169,6 +171,7 @@ namespace StudioCCS
 		private static KeyStatus ZoomIn = KeyStatus.Up;
 		private static KeyStatus ZoomOut = KeyStatus.Up;
 		private static KeyStatus ShiftModifier = KeyStatus.Up;
+		private static KeyStatus ControlModifier = KeyStatus.Up;
 		
 		private static Keys MoveForward_Key = Keys.W;
 		private static Keys MoveBackward_Key = Keys.S;
@@ -263,7 +266,7 @@ namespace StudioCCS
 			}
 		}
 		
-		public static bool LoadCCSFile(string fileName)
+		public static TreeNode LoadCCSFile(string fileName)
 		{
 			var tmpCCS = new CCSFile();
 			Stopwatch sw = new Stopwatch();
@@ -275,12 +278,12 @@ namespace StudioCCS
 					sw.Stop();
 					Debug.WriteLine("Read and Initialized {0} in {1}ms...", fileName, sw.ElapsedMilliseconds);
 					CCSFileList.Add(tmpCCS);
-					return true;
+					return tmpCCS.ToNode();
 				}
 			}
 			sw.Stop();
 			Debug.WriteLine("Failed to read {0} in {1}ms...", fileName, sw.ElapsedMilliseconds);
-			return false;
+			return null;
 		}
 		
 		public static bool UnloadCCSFile(CCSFile file)
@@ -313,15 +316,15 @@ namespace StudioCCS
 			return tmpMainAnmNode;
 		}
 		
-		public static void Init(Control ctrl)
+		public static void Init(GLControl glCtrl)
 		{
-			WiFo = Utilities.CreateWindowsWindowInfo(ctrl.Handle);
-			Context = new GraphicsContext(GraphicsMode.Default, WiFo);
-			Context.MakeCurrent(WiFo);
-			Context.LoadAll();
+			//WiFo = Utilities.CreateWindowsWindowInfo(ctrl.Handle);
+			//Context = new GraphicsContext(GraphicsMode.Default, WiFo);
+			//Context.MakeCurrent(WiFo);
+			//Context.LoadAll();
+			control = glCtrl;
+			control.MakeCurrent();
 			WasInit = true;
-			
-			UpdateViewport(ctrl);
 			
 			GL.ClearColor(64 / 255.0f, 64 / 255.0f, 64 / 255.0f, 1.0f);
 			GL.Enable(EnableCap.Blend);
@@ -360,10 +363,104 @@ namespace StudioCCS
 		}
 		
 		
-		public static void UpdateViewport(Control ctl)
+		private static void HandleInput()
 		{
-			ViewWidth = ctl.Width;
-			ViewHeight = ctl.Height;
+			ArcBallCamera curCamera = CurrentCamera();
+			Vector3 CamTarget = curCamera.Target;
+			
+			//Check for Movement
+			bool shiftMod = (ShiftModifier != KeyStatus.Up);
+			if(!DefaultToAxisMovement) shiftMod = !shiftMod;
+			
+			if(shiftMod)
+			{	
+				Vector3 movement = new Vector3(0.0f, 0.0f, 0.0f);
+				
+				Matrix4 viewMtx = curCamera.GetMatrix();
+				Vector3 forward = new Vector3(viewMtx[0, 2], viewMtx[1, 2], viewMtx[2, 2]).Normalized();
+				Vector3 up = new Vector3(viewMtx[0,1], viewMtx[1,1], viewMtx[2,1]).Normalized();
+				Vector3 right = Vector3.Cross(forward, up).Normalized();
+				
+				if(MoveForward != KeyStatus.Up)
+				{
+					
+					movement += forward;
+				}
+				
+				if(MoveBackward != KeyStatus.Up)
+				{
+					movement -= forward;
+				}
+				
+				if(MoveLeft != KeyStatus.Up)
+				{
+					movement -= right;
+						
+				}
+				
+				if(MoveRight != KeyStatus.Up)
+				{
+					movement += right;
+				}
+
+				if(ControlModifier == KeyStatus.Up)
+				{
+					movement *= new Vector3(1.0f, 0.0f, 1.0f);
+				}
+				
+				if(MoveUp != KeyStatus.Up)
+				{
+					movement += Vector3.UnitY;
+				}
+				
+				if(MoveDown != KeyStatus.Up)
+				{
+					movement -= Vector3.UnitY;
+				}
+				
+				CamTarget += (movement * MovementSpeed * DeltaTime);
+			}
+			else
+			{
+				if(MoveForward != KeyStatus.Up)
+				{
+					CamTarget.Z -= DeltaTime * MovementSpeed;
+				}
+				if(MoveBackward != KeyStatus.Up)
+				{
+					CamTarget.Z += DeltaTime * MovementSpeed;
+				}
+				if(MoveLeft != KeyStatus.Up)
+				{
+					CamTarget.X -= DeltaTime * MovementSpeed;
+				}
+				if(MoveRight != KeyStatus.Up)
+				{
+					CamTarget.X += DeltaTime * MovementSpeed;
+				}
+				if(MoveUp != KeyStatus.Up)
+				{
+					CamTarget.Y -= DeltaTime * MovementSpeed;
+				}
+				if(MoveDown != KeyStatus.Up)
+				{
+					CamTarget.Y += DeltaTime * MovementSpeed;
+				}
+			}
+			curCamera.Target = CamTarget;
+			
+			float keyZoom = 0.0075f;
+			float distToZoom = DeltaTime * keyZoom;
+			if(ShiftModifier != KeyStatus.Up) distToZoom *= 0.25f;
+			if(ZoomIn != KeyStatus.Up)
+			{
+				curCamera.Distance -= distToZoom;
+			}
+			
+			if(ZoomOut != KeyStatus.Up)
+			{
+				curCamera.Distance += distToZoom;
+			}
 		}
 		
 		public static void Render()
@@ -396,48 +493,8 @@ namespace StudioCCS
 			Timer.Start();
 			
 			//Handle Keyboard input
-			//Vector3 CamTarget = (SceneDisplay == SceneMode.Preview) ? PreviewCamera.Target : SceneCamera.Target;
+			HandleInput();
 			ArcBallCamera curCamera = CurrentCamera();
-			Vector3 CamTarget = curCamera.Target;
-			if(MoveForward != KeyStatus.Up)
-			{
-				CamTarget.Z -= DeltaTime * MovementSpeed;
-			}
-			if(MoveBackward != KeyStatus.Up)
-			{
-				CamTarget.Z += DeltaTime * MovementSpeed;
-			}
-			if(MoveLeft != KeyStatus.Up)
-			{
-				CamTarget.X -= DeltaTime * MovementSpeed;
-			}
-			if(MoveRight != KeyStatus.Up)
-			{
-				CamTarget.X += DeltaTime * MovementSpeed;
-			}
-			if(MoveUp != KeyStatus.Up)
-			{
-				CamTarget.Y -= DeltaTime * MovementSpeed;
-			}
-			if(MoveDown != KeyStatus.Up)
-			{
-				CamTarget.Y += DeltaTime * MovementSpeed;
-			}
-			curCamera.Target = CamTarget;
-			
-			float keyZoom = 0.0075f;
-			float distToZoom = DeltaTime * keyZoom;
-			if(ShiftModifier == KeyStatus.Pressed) distToZoom *= 0.25f;
-			if(ZoomIn != KeyStatus.Up)
-			{
-				curCamera.Distance -= distToZoom;
-			}
-			
-			if(ZoomOut != KeyStatus.Up)
-			{
-				curCamera.Distance += distToZoom;
-			}
-			
 			
 			//Clear
 			GL.Clear(ClearBufferMask.DepthBufferBit | ClearBufferMask.ColorBufferBit);
@@ -505,7 +562,7 @@ namespace StudioCCS
 			
 
 			
-			Context.SwapBuffers();
+			control.SwapBuffers();
 		}
 		
 		private static bool IsPreviewTexture()
@@ -641,13 +698,13 @@ namespace StudioCCS
 		
 		private static void SetMainViewport()
 		{
-			GL.Viewport(0, 0, ViewWidth, ViewHeight);
-			ProjectionMtx = Matrix4.CreatePerspectiveFieldOfView((float)(Math.PI * (45.0f / 180.0f)), ViewWidth / (float)ViewHeight, 0.1f, 100000.0f);
+			GL.Viewport(0, 0, control.Width, control.Height);
+			ProjectionMtx = Matrix4.CreatePerspectiveFieldOfView((float)(Math.PI * (45.0f / 180.0f)), control.Width / (float)control.Height, 0.1f, 100000.0f);
 		}
 		
 		private static void SetAxisViewport()
 		{
-			GL.Viewport(ViewWidth - AxisViewSize, ViewHeight - AxisViewSize, AxisViewSize, AxisViewSize);
+			GL.Viewport(control.Width - AxisViewSize, control.Height - AxisViewSize, AxisViewSize, AxisViewSize);
 			AxisProjectionMtx = Matrix4.CreatePerspectiveFieldOfView((float)(Math.PI * (45.0f / 180.0f)), 1.0f, 0.01f, 100000.0f);
 		}
 		
@@ -701,7 +758,7 @@ namespace StudioCCS
 			//ArcBallCamera CurrentCam = (SceneDisplay == SceneMode.Preview) ? PreviewCamera : SceneCamera;
 			var curCam = CurrentCamera();
 			float distToZoom = ((e.Delta * MouseWheelSensitivity) * DeltaTime);
-			if(ShiftModifier == KeyStatus.Pressed) distToZoom *= 0.25f;
+			if(ShiftModifier != KeyStatus.Up) distToZoom *= 0.25f;
 			curCam.Distance += distToZoom;
 			
 		}
@@ -718,6 +775,7 @@ namespace StudioCCS
 			else if(e.KeyCode == ZoomOut_Key) ZoomOut = (ZoomOut == KeyStatus.Pressed) ? KeyStatus.Repeated : KeyStatus.Pressed;
 			
 			if(e.Shift) ShiftModifier = (ShiftModifier == KeyStatus.Pressed) ? KeyStatus.Repeated : KeyStatus.Pressed;
+			if(e.Control) ControlModifier = (ControlModifier == KeyStatus.Pressed) ? KeyStatus.Repeated : KeyStatus.Pressed;
 		}
 		
 		public static void KeyRelease(KeyEventArgs e)
@@ -732,6 +790,7 @@ namespace StudioCCS
 			else if(e.KeyCode == ZoomOut_Key) ZoomOut = KeyStatus.Up;
 			
 			if(!e.Shift) ShiftModifier = KeyStatus.Up;
+			if(!e.Control) ControlModifier = KeyStatus.Up;
 		}
 		
 		
@@ -746,7 +805,7 @@ namespace StudioCCS
 		public static void MakeCurrent()
 		{
 			//Debug.WriteLine("Making Context Current...");
-			Context.MakeCurrent(WiFo);
+			control.MakeCurrent();
 		}
 		
 		public static void DumpToObj(string outputPath, bool collision, bool splitSubModels, bool splitCollision, bool withNormals, bool dummies, bool animes)

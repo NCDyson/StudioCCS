@@ -315,5 +315,10 @@ namespace StudioCCS.libCCS
 			
 			return frameRange;
 		}
+		
+		public static float toRads(float what)
+		{
+			return (float)(what * Math.PI) / 180.0f;
+		}
 	}
 }
